@@ -1,17 +1,21 @@
-const decrementEl =  document.querySelector('button[data-action="decrement"]');
-const incrementEl = document.querySelector('button[data-action="increment"]');
-const value = document.getElementById("value");
+const refs = {
+  btnDecriment: document.querySelector('button[data-action="decrement"]'),
+  btnIncrement: document.querySelector('button[data-action="increment"]'),
+  valueEl: document.getElementById('value'),
+};
+
 let counterValue = 0;
 
-const handClickMinus = (event) =>{
-    counterValue -=1;
-    return value.textContent = counterValue;
+refs.btnDecriment.addEventListener('click', onClickDecrementButton);
+
+function onClickDecrementButton () {
+  counterValue -= 1;
+  return refs.valueEl.textContent = counterValue;
 }
 
-const handClickPlus = (event) => {
-    counterValue +=1
-    return value.textContent = counterValue;
-}
+refs.btnIncrement.addEventListener('click', onClickIncrementButton);
 
-decrementEl.addEventListener("click", handClickMinus);
-incrementEl.addEventListener("click", handClickPlus);
+function onClickIncrementButton() {
+  counterValue += 1;
+  return refs.valueEl.textContent = counterValue;
+}

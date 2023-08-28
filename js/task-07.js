@@ -1,8 +1,8 @@
-const fontSize = document.getElementById("font-size-control");
-const textEl = document.getElementById("text");
+const fontSize = document.getElementById('font-size-control');
+const textEl = document.getElementById('text');
 
-fontSize.addEventListener('input', OnInputControl);
+fontSize.addEventListener('input', onInputMove);
 
-function OnInputControl(event) {
-    textEl.style.fontSize = `${event.target.value}px`;
+function onInputMove(event) {
+  textEl.style.fontSize = `${event.target.value}px`;
 }

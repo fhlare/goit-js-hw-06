@@ -7,20 +7,12 @@ const ingredients = [
   'Condiments',
 ];
 
-// const ingredient = ingredients.reduce((acc, item) => acc + `<li>${item}</li>`, "");
-// console.log(ingredient)
-// const ulEl = document.getElementById("ingredients");
-// // ulEl.append(`${ingredient}`);
-// ulEl.insertAdjacentHTML("beforeend", `${ingredient}`);
+const ulEl = document.getElementById('ingredients');
 
-const ulEl = document.getElementById("ingredients");
-
-const ingredientList = ingredients.map(ingredient => {
-  const list = document.createElement("li");
-  list.textContent = ingredient;
-  list.classList.add("item");
-  return list;
+const liElementsOfIngridients = ingredients.map(ingridient => {
+  const liEL = document.createElement('li');
+  liEL.textContent = ingridient;
+  liEL.classList.add('item');
+  return liEL;
 });
-console.log(ingredientList);
-
-ulEl.append(...ingredientList);
+ulEl.append(...liElementsOfIngridients);

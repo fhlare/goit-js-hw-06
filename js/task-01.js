@@ -1,11 +1,11 @@
-const ulEl = document.getElementById('categories');
+const ulEL = document.getElementById('categories');
 
-console.log(`Number of categories: ${ulEl.children.length}`);
+console.log(`Number o categories: ${ulEL.children.length}`);
 
-[...ulEl.children].forEach((li)=>{
-    const nameEl = li.querySelector("h2");
-    const itemsEl = li.querySelectorAll('ul li');
+[...ulEL.children].map(el => {
+  const nameCategory = el.querySelector('h2');
+  const elementsOfCategories = el.querySelectorAll('ul li');
 
-    console.log(`Category: ${nameEl.textContent}`);
-    console.log(`Elements: ${itemsEl.length}`);
+  console.log(`Category: ${nameCategory.textContent}`);
+  console.log(`Elements ${elementsOfCategories.length}`);
 });
